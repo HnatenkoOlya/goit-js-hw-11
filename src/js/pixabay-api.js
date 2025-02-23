@@ -12,7 +12,6 @@ export async function fetchImages(query) {
                 image_type: "photo",
                 orientation: "horizontal",
                 safesearch: true,
-                per_page: 12
             }
         });
         return response.data.hits;

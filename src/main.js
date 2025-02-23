@@ -16,6 +16,7 @@ form.addEventListener("submit", async (event) => {
         });
         return;
     }
+    loader.style.display = "block";
     try {
        const images = await fetchImages(query);
        if (images.length === 0) {
@@ -29,5 +30,7 @@ form.addEventListener("submit", async (event) => {
         iziToast.error({
             message: 'Something went wrong. Please try again later.',
           });
-       }
+       } finally {
+        loader.style.display = "none";
+    }
 })
