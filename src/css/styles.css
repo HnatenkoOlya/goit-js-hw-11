@@ -45,37 +45,40 @@
   background-color: #6C8CFF;
 }
 .loading-box {
- display: flex;
- justify-content: center;
- align-items: center;
- font-size: 16px;
+  display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 32px;
 }
-.loading {
-  font-size: 16px;
-}
-.loader{
-  display: block;
+/*.loader{
+  font-size: 48px;
+  color:  #5989d0;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
   position: relative;
-  height: 12px;
-  width: 80%;
-  border: 1px solid #fff;
-  border-radius: 10px;
-  overflow: hidden;
 }
 .loader:after{
+  content: 'Loading';
+  position: relative;
+  z-index: 5;
+}
+.loader:before{
   content: '';
+  height: 6px;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 100%;
   position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 0;
-  background: #FF3D00;
-  animation: 6s prog ease-in infinite;
+  bottom: 0px;
+  background: linear-gradient(#434bd7 100%, transparent 0) no-repeat;
+  background-size: 0% auto;
+  animation: 10s lineGrow linear infinite;
 }
 
-@keyframes prog {
-  to  {   width: 100%;}
-}
+@keyframes lineGrow {to {  background-size: 100% auto}}*/
+
 .gallery {
   list-style: none;
   display: flex;

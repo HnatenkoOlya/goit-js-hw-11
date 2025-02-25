@@ -6,6 +6,7 @@ import "izitoast/dist/css/iziToast.min.css";
 const form = document.querySelector(".form");
 const input = document.querySelector(".input");
 const loader = document.querySelector(".loading-box");
+const gallery = document.querySelector(".gallery");
 
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -16,7 +17,9 @@ form.addEventListener("submit", async (event) => {
         });
         return;
     }
+     gallery.innerHTML = "";
     loader.style.display = "block";
+    console.log("Loader on");
     try {
        const images = await fetchImages(query);
        if (images.length === 0) {
@@ -31,6 +34,7 @@ form.addEventListener("submit", async (event) => {
             message: 'Something went wrong. Please try again later.',
           });
        } finally {
-        loader.style.display = "none";
+        loader.style.display = "none"; 
+        console.log("Loader off");
     }
 })
